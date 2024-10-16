@@ -1,7 +1,6 @@
 package web.config;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -18,16 +17,14 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:db.properties")
-@EnableAspectJAutoProxy
 @EnableTransactionManagement
 @ComponentScan("web")
-public class AppConfig {
+public class JpaConfig {
 
 
     private final Environment env;
 
-    @Autowired
-    public AppConfig(Environment env) {
+    public JpaConfig(Environment env) {
         this.env = env;
     }
 

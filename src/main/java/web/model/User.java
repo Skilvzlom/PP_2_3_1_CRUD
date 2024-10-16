@@ -1,6 +1,8 @@
 package web.model;
 
-import jakarta.persistence.*;
+import com.sun.istack.NotNull;
+
+import javax.persistence.*;
 
 @Table(name = "users")
 @Entity
@@ -9,14 +11,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     @Column
+    @NotNull
     private String name;
     @Column
+    @NotNull
     private String userName;
     @Column
+    @NotNull
     private String email;
     @Column
     private String phone;
     @Column
+    @NotNull
     private String password;
 
     public User(String name, String userName, String email, String phone, String password) {
